@@ -13,13 +13,13 @@ Exec_Application_Scope:-Global-
 Exec_Allow_Import_Set_WS_Creation:TRUE
 Exec_Import_Set_Application:global
 Exec_Use_S2S_Attachment_Migration:TRUE
-Exec_Max_Attach_Size_MB:32
+Exec_Max_Attach_Size_MB:44
 Exec_Migrate_Chunk_Size:10000
 Exec_Refresh_Object_Cache:FALSE
-Last_Exec_Identifier:2017-07-26_13-27
-Last_Migration_Report:/Applications/ITSM Bridge/Template Development/R2S/R2S 8.1-SN Incident and Problem Mgmt/reports/execution_2017-05-22_11-17/migration_report_Incident_Related_Problem.csv
+Last_Exec_Identifier:2018-06-16_16-29
+Last_Migration_Report:C:\Users\Administrator\Documents\ITSM Bridge Projects\Projects\INC_PBM\reports\execution_2018-06-16_16-09\migration_report_Journal_Entry_INC.csv
 Last_TC_Report_Folder:
 Last_Diff_Report_Folder:
-      Variable_Value:Company=Company A
-      Variable_Value:Single Company=TRUE
-      Variable_Value:Modified Since Date=2001-01-01 00:00:00
+      Variable_Value:Company=Calbro Services
+      Variable_Value:Single Company=FALSE
+      Variable_Value:Modified Since Date=2018-01-01 00:00:00

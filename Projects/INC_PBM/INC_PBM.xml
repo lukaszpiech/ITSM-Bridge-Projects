@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Project AppVersion="3.7.14" Type="Standard">
-<version>2</version>
+<version>21</version>
 <Notes>This template is used to migrate incident and problem data from BMC Remedy ITSM to Service Now.
 It can be used with most legacy ITSM versions including 764, 8.1 and 9.1 servers.
 It should be run AFTER the migration of all foundation data (see separate template for this).
@@ -27,7 +27,7 @@ R3: Added Company variable to support multi-tenancy migrations and updated sourc
 <Port>3636</Port>
 </Connection>
 <Connection ConnectionType="Target" ServerType="Service Now">
-<URL>https://dev47087.service-now.com</URL>
+<URL>https://dev54541.service-now.com/</URL>
 </Connection>
 <DMDList>
 <DataMappingsDefinition attachmentsOption="0" enabled="No" id="User Reference">
@@ -144,10 +144,19 @@ R3: Added Company variable to support multi-tenancy migrations and updated sourc
 <SourceForm>HPD:Help Desk</SourceForm>
 <SourceQuery>[Last Modified Date] &gt; #Modified Since Date# AND ((#Single Company# = TRUE AND [Contact Company] = #Company#) OR #Single Company# = FALSE)</SourceQuery>
 <BusinessHoursOption>NONE</BusinessHoursOption>
-<CreateOption>DEFAULT</CreateOption>
-<UpdateOption>DEFAULT</UpdateOption>
-<MigrateMethod>DEFAULT</MigrateMethod>
-<AttachmentSet Type="Source"/>
+<CreateOption>CREATE</CreateOption>
+<UpdateOption>UPDATE</UpdateOption>
+<MigrateMethod>DIRECT</MigrateMethod>
+<AttachmentSet Type="Source">
+<SourceField>z2AF_Work Log01</SourceField>
+<SourceField>SRAttachment</SourceField>
+<SourceField>z2AF_Work Log02</SourceField>
+<SourceField>z2AF_Work Log03</SourceField>
+<SourceField>z2AF Work Log01</SourceField>
+<SourceField>Attachment</SourceField>
+<SourceField>z2AF Work Log02</SourceField>
+<SourceField>z2AF Work Log03</SourceField>
+</AttachmentSet>
 <LookupQuery Type="Target" id="core_company">
 <Form>core_company</Form>
 <SearchQuery>[name] = #SRC.Contact Company#</SearchQuery>
@@ -428,7 +437,7 @@ R3: Added Company variable to support multi-tenancy migrations and updated sourc
 <Variable Type="STRING">!WorkLog Entries!</Variable>
 </VariableList>
 </DataMappingsDefinition>
-<DataMappingsDefinition attachmentsOption="0" enabled="Yes" id="Incident Task">
+<DataMappingsDefinition attachmentsOption="2" enabled="Yes" id="Incident Task">
 <TargetForm>incident_task</TargetForm>
 <SourceForm>TMS:Task</SourceForm>
 <SourceQuery>[RootRequestFormName] = 'HPD:Help Desk'</SourceQuery>
@@ -639,7 +648,7 @@ R3: Added Company variable to support multi-tenancy migrations and updated sourc
 </FieldMapping>
 </FieldMappingsDefinition>
 </DataMappingsDefinition>
-<DataMappingsDefinition attachmentsOption="0" enabled="Yes" id="Problem">
+<DataMappingsDefinition attachmentsOption="2" enabled="Yes" id="Problem">
 <TargetForm>problem</TargetForm>
 <SourceForm>PBM:Problem Investigation</SourceForm>
 <SourceQuery>[Last Modified Date] &gt; #Modified Since Date# AND ((#Single Company# = TRUE AND [Contact Company] = #Company#) OR #Single Company# = FALSE)</SourceQuery>
@@ -1577,6 +1586,91 @@ R3: Added Company variable to support multi-tenancy migrations and updated sourc
 <LookupField>sys_id</LookupField>
 <NoMatchAction>Set Null</NoMatchAction>
 <MultiMatchAction>Use First</MultiMatchAction>
+</FieldMapping>
+</FieldMappingsDefinition>
+</DataMappingsDefinition>
+<DataMappingsDefinition attachmentsOption="0" enabled="Yes" id="Journal Entry INC">
+<TargetForm>sys_journal_field</TargetForm>
+<SourceForm>HPD:WorkLog</SourceForm>
+<BusinessHoursOption>NONE</BusinessHoursOption>
+<CreateOption>DEFAULT</CreateOption>
+<UpdateOption>DEFAULT</UpdateOption>
+<MigrateMethod>DEFAULT</MigrateMethod>
+<LookupQuery Type="Target" id="incident">
+<Form>incident</Form>
+<SearchQuery>[number] = #SRC.Incident Number#</SearchQuery>
+</LookupQuery>
+<KeyMapping AllowNullKeyValues="No" LoadCache="No" Type="Mappings" multi_match_action="Use First">
+<TargetField>element_id</TargetField>
+<TargetField>sys_created_on</TargetField>
+<TargetField>element</TargetField>
+</KeyMapping>
+<DeleteOption Type="NONE">
+<DisplayFields/>
+</DeleteOption>
+<ValueSetInclusionFilter NullValueAction="EXCLUDE_ENTRY" Type="ALL"/>
+<FieldMappingsDefinition>
+<TargetForm>sys_journal_field</TargetForm>
+<SourceForm>HPD:WorkLog</SourceForm>
+<FieldMapping Type="Simple">
+<TargetField>sys_created_on</TargetField>
+<SourceField>Submit Date</SourceField>
+</FieldMapping>
+<FieldMapping Type="Simple">
+<TargetField>name</TargetField>
+<DefaultValue>incident</DefaultValue>
+</FieldMapping>
+<FieldMapping Type="Lookup">
+<TargetField>element_id</TargetField>
+<LookupQuery>incident</LookupQuery>
+<LookupField>sys_id</LookupField>
+<NoMatchAction>Set Null</NoMatchAction>
+<MultiMatchAction>Use First</MultiMatchAction>
+</FieldMapping>
+<FieldMapping Type="Assignment">
+<TargetField>value</TargetField>
+<Assignment>([Description] + [Detailed Description])</Assignment>
+<ErrorAction>SET NULL</ErrorAction>
+</FieldMapping>
+<FieldMapping Type="Simple">
+<TargetField>sys_created_by</TargetField>
+<SourceField>Submitter</SourceField>
+</FieldMapping>
+<FieldMapping Type="Value Match">
+<TargetField>element</TargetField>
+<SourceField>View Access</SourceField>
+<NoMatchAction>Set Null</NoMatchAction>
+<ValueMapping>
+<SourceValue>0</SourceValue>
+<TargetValue>work_notes</TargetValue>
+</ValueMapping>
+<ValueMapping>
+<SourceValue>1</SourceValue>
+<TargetValue>comments</TargetValue>
+</ValueMapping>
+</FieldMapping>
+</FieldMappingsDefinition>
+</DataMappingsDefinition>
+<DataMappingsDefinition attachmentsOption="2" enabled="Yes" id="Incident_Atachment">
+<TargetForm>incident</TargetForm>
+<SourceForm>HPD:WorkLog</SourceForm>
+<BusinessHoursOption>NONE</BusinessHoursOption>
+<CreateOption>CREATE</CreateOption>
+<UpdateOption>UPDATE</UpdateOption>
+<MigrateMethod>IMPORT_SET_NO_BR</MigrateMethod>
+<KeyMapping AllowNullKeyValues="No" LoadCache="No" Type="Mappings" multi_match_action="Use First">
+<TargetField>number</TargetField>
+</KeyMapping>
+<DeleteOption Type="NONE">
+<DisplayFields/>
+</DeleteOption>
+<ValueSetInclusionFilter NullValueAction="EXCLUDE_ENTRY" Type="ALL"/>
+<FieldMappingsDefinition>
+<TargetForm>incident</TargetForm>
+<SourceForm>HPD:WorkLog</SourceForm>
+<FieldMapping Type="Simple">
+<TargetField>number</TargetField>
+<SourceField>Incident Number</SourceField>
 </FieldMapping>
 </FieldMappingsDefinition>
 </DataMappingsDefinition>
