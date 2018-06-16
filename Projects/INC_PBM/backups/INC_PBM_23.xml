@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Project AppVersion="3.7.14" Type="Standard">
-<version>27</version>
+<version>23</version>
 <Notes>This template is used to migrate incident and problem data from BMC Remedy ITSM to Service Now.
 It can be used with most legacy ITSM versions including 764, 8.1 and 9.1 servers.
 It should be run AFTER the migration of all foundation data (see separate template for this).
@@ -173,10 +173,6 @@ R3: Added Company variable to support multi-tenancy migrations and updated sourc
 <Form>HPD:WorkLog</Form>
 <SearchQuery>[Incident Number] = #Incident Number#</SearchQuery>
 </LookupQuery>
-<LookupQuery Type="Target" id="cmdb_ci">
-<Form>cmdb_ci</Form>
-<SearchQuery>[name] = #SRC.HPD_CI#</SearchQuery>
-</LookupQuery>
 <KeyMapping AllowNullKeyValues="No" LoadCache="No" Type="Mappings" multi_match_action="Use First">
 <TargetField>number</TargetField>
 </KeyMapping>
@@ -224,13 +220,6 @@ R3: Added Company variable to support multi-tenancy migrations and updated sourc
 <NoMatchAction>Set Null</NoMatchAction>
 <MultiMatchAction>Use First</MultiMatchAction>
 </FieldMapping>
-<FieldMapping Type="Lookup">
-<TargetField>cmdb_ci</TargetField>
-<LookupQuery>cmdb_ci</LookupQuery>
-<LookupField>sys_id</LookupField>
-<NoMatchAction>Set Null</NoMatchAction>
-<MultiMatchAction>Use First</MultiMatchAction>
-</FieldMapping>
 <FieldMapping Type="Value Match">
 <TargetField>impact</TargetField>
 <SourceField>Impact</SourceField>
@@ -266,71 +255,6 @@ R3: Added Company variable to support multi-tenancy migrations and updated sourc
 <TargetField>close_notes</TargetField>
 <Assignment>TRUNC([Resolution],4000)</Assignment>
 <ErrorAction>SET NULL</ErrorAction>
-</FieldMapping>
-<FieldMapping Type="Value Match">
-<TargetField>hold_reason</TargetField>
-<SourceField>Status_Reason</SourceField>
-<NoMatchAction>Set Null</NoMatchAction>
-<ValueMapping>
-<SourceValue>7000</SourceValue>
-<TargetValue>4</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>8000</SourceValue>
-<TargetValue>1</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>5000</SourceValue>
-<TargetValue>4</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>6000</SourceValue>
-<TargetValue>4</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>13000</SourceValue>
-<TargetValue>1</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>4000</SourceValue>
-<TargetValue>4</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>19000</SourceValue>
-<TargetValue>1</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>12000</SourceValue>
-<TargetValue>5</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>15000</SourceValue>
-<TargetValue>1</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>1000</SourceValue>
-<TargetValue>5</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>2000</SourceValue>
-<TargetValue>4</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>3000</SourceValue>
-<TargetValue>4</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>9000</SourceValue>
-<TargetValue>5</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>10000</SourceValue>
-<TargetValue>1</TargetValue>
-</ValueMapping>
-<ValueMapping>
-<SourceValue>11000</SourceValue>
-<TargetValue>5</TargetValue>
-</ValueMapping>
 </FieldMapping>
 <FieldMapping Type="Lookup">
 <TargetVariable>!Assignee Email!</TargetVariable>
