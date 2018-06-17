@@ -16,10 +16,10 @@ Exec_Use_S2S_Attachment_Migration:TRUE
 Exec_Max_Attach_Size_MB:32
 Exec_Migrate_Chunk_Size:10000
 Exec_Refresh_Object_Cache:FALSE
-Last_Exec_Identifier:2018-06-16_15-54
+Last_Exec_Identifier:2018-06-17_12-57
 Last_Migration_Report:/Applications/ITSM Bridge/Avaya/R2S Configuration Items/reports/execution_2017-04-10_12-08/migration_report_CI_System_Hardware_Relationship.csv
 Last_TC_Report_Folder:
 Last_Diff_Report_Folder:
       Variable_Value:Company Name=Calbro Services
       Variable_Value:DataSet=BMC.ASSET
-      Variable_Value:Single Company=TRUE
+      Variable_Value:Single Company=FALSE
