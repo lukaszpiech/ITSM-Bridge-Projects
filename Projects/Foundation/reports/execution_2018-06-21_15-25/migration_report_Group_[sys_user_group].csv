@@ -1,0 +1,6 @@
+"Timestamp","Target ID","Source ID","Result","Status","Message"
+"2018/06/21 15:34:48","619ba74edb7613007f3873278c9619ee","SGP000000000009","Created","Success",""
+"2018/06/21 15:34:48","a715cd759f2002002920bde8132e7018","SGP000000000013","Not Completed","Skip","Target Entry Exists and No Updates Allowed"
+"2018/06/21 15:34:48","a19ba74edb7613007f3873278c9619f0","SGP000000000113","Created","Success",""
+"2018/06/21 15:34:48","299ba74edb7613007f3873278c9619f1","SGP000000000010","Created","Success",""
+"2018/06/21 15:34:48","ad9ba74edb7613007f3873278c9619f2","SGP000000000011","Created","Success",""

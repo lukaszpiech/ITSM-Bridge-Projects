@@ -1,0 +1,108 @@
+2018/06/21 15:51:12.055 [ERROR] com.sun.xml.internal.messaging.saaj.SOAPExceptionImpl: Message send failed
+	com.sun.xml.internal.messaging.saaj.SOAPExceptionImpl: com.sun.xml.internal.messaging.saaj.SOAPExceptionImpl: Message send failed
+		at com.sun.xml.internal.messaging.saaj.client.p2p.HttpSOAPConnection.call(Unknown Source)
+		at f.p.a(SNowServer.java:957)
+		at f.p.s(SNowServer.java:351)
+		at A.d.a(ServerObjectCache.java:321)
+		at A.d.a(ServerObjectCache.java:84)
+		at UI.b$14.call(ApplicationController.java:2397)
+		at javafx.concurrent.Task$TaskCallable.call(Task.java:1423)
+		at java.util.concurrent.FutureTask.run(Unknown Source)
+		at java.lang.Thread.run(Unknown Source)
+	Caused by: com.sun.xml.internal.messaging.saaj.SOAPExceptionImpl: Message send failed
+		at com.sun.xml.internal.messaging.saaj.client.p2p.HttpSOAPConnection.post(Unknown Source)
+		... 9 more
+	Caused by: java.net.SocketTimeoutException: Read timed out
+		at java.net.SocketInputStream.socketRead0(Native Method)
+		at java.net.SocketInputStream.socketRead(Unknown Source)
+		at java.net.SocketInputStream.read(Unknown Source)
+		at java.net.SocketInputStream.read(Unknown Source)
+		at sun.security.ssl.InputRecord.readFully(Unknown Source)
+		at sun.security.ssl.InputRecord.read(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+		at sun.net.www.protocol.https.HttpsClient.afterConnect(Unknown Source)
+		at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source)
+		at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(Unknown Source)
+		at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(Unknown Source)
+		at sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(Unknown Source)
+		... 10 more
+	
+CAUSE:
+
+	com.sun.xml.internal.messaging.saaj.SOAPExceptionImpl: Message send failed
+		at com.sun.xml.internal.messaging.saaj.client.p2p.HttpSOAPConnection.post(Unknown Source)
+		at com.sun.xml.internal.messaging.saaj.client.p2p.HttpSOAPConnection.call(Unknown Source)
+		at f.p.a(SNowServer.java:957)
+		at f.p.s(SNowServer.java:351)
+		at A.d.a(ServerObjectCache.java:321)
+		at A.d.a(ServerObjectCache.java:84)
+		at UI.b$14.call(ApplicationController.java:2397)
+		at javafx.concurrent.Task$TaskCallable.call(Task.java:1423)
+		at java.util.concurrent.FutureTask.run(Unknown Source)
+		at java.lang.Thread.run(Unknown Source)
+	Caused by: java.net.SocketTimeoutException: Read timed out
+		at java.net.SocketInputStream.socketRead0(Native Method)
+		at java.net.SocketInputStream.socketRead(Unknown Source)
+		at java.net.SocketInputStream.read(Unknown Source)
+		at java.net.SocketInputStream.read(Unknown Source)
+		at sun.security.ssl.InputRecord.readFully(Unknown Source)
+		at sun.security.ssl.InputRecord.read(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+		at sun.net.www.protocol.https.HttpsClient.afterConnect(Unknown Source)
+		at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source)
+		at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(Unknown Source)
+		at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(Unknown Source)
+		at sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(Unknown Source)
+		... 10 more
+	
+CAUSE:
+
+	java.net.SocketTimeoutException: Read timed out
+		at java.net.SocketInputStream.socketRead0(Native Method)
+		at java.net.SocketInputStream.socketRead(Unknown Source)
+		at java.net.SocketInputStream.read(Unknown Source)
+		at java.net.SocketInputStream.read(Unknown Source)
+		at sun.security.ssl.InputRecord.readFully(Unknown Source)
+		at sun.security.ssl.InputRecord.read(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+		at sun.security.ssl.SSLSocketImpl.startHandshake(Unknown Source)
+		at sun.net.www.protocol.https.HttpsClient.afterConnect(Unknown Source)
+		at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source)
+		at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(Unknown Source)
+		at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(Unknown Source)
+		at sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(Unknown Source)
+		at com.sun.xml.internal.messaging.saaj.client.p2p.HttpSOAPConnection.post(Unknown Source)
+		at com.sun.xml.internal.messaging.saaj.client.p2p.HttpSOAPConnection.call(Unknown Source)
+		at f.p.a(SNowServer.java:957)
+		at f.p.s(SNowServer.java:351)
+		at A.d.a(ServerObjectCache.java:321)
+		at A.d.a(ServerObjectCache.java:84)
+		at UI.b$14.call(ApplicationController.java:2397)
+		at javafx.concurrent.Task$TaskCallable.call(Task.java:1423)
+		at java.util.concurrent.FutureTask.run(Unknown Source)
+		at java.lang.Thread.run(Unknown Source)
+	
+2018/06/21 15:51:12.067 [ERROR] Target Server Initialisation Failed.
+Failure to Connect to Server https://dev47087.service-now.com
+[com.sun.xml.internal.messaging.saaj.SOAPExceptionImpl: Message send failed]
+	java.lang.Exception: Target Server Initialisation Failed.
+Failure to Connect to Server https://dev47087.service-now.com
+[com.sun.xml.internal.messaging.saaj.SOAPExceptionImpl: Message send failed]
+		at f.p.a(SNowServer.java:2015)
+		at f.p.a(SNowServer.java:970)
+		at f.p.s(SNowServer.java:351)
+		at A.d.a(ServerObjectCache.java:321)
+		at A.d.a(ServerObjectCache.java:84)
+		at UI.b$14.call(ApplicationController.java:2397)
+		at javafx.concurrent.Task$TaskCallable.call(Task.java:1423)
+		at java.util.concurrent.FutureTask.run(Unknown Source)
+		at java.lang.Thread.run(Unknown Source)
+	

@@ -1,0 +1,8 @@
+"Timestamp","Target ID","Source ID","Result","Status","Message"
+"2018/06/21 12:33:06","31f2563937f6d3005d19dcc773990e1d","000000000000118|000000000000104","Updated","Success","No Changes Made"
+"2018/06/21 12:33:06","3fec5afd37f6d3005d19dcc773990ea9","000000000000122|000000000000108","Updated","Success","No Changes Made"
+"2018/06/21 12:33:06","f3ec5afd37f6d3005d19dcc773990eaa","000000000000138|000000000000110","Updated","Success","No Changes Made"
+"2018/06/21 12:33:06","f3ec5afd37f6d3005d19dcc773990eaa","000000000000138|000000000000118","Not Completed","Skip","Another source record is being migrated for this key"
+"2018/06/21 12:33:06","bbec5afd37f6d3005d19dcc773990eaa","000000000000141|000000000000115","Updated","Success","No Changes Made"
+"2018/06/21 12:33:06","6cfae2f9373ad3005d19dcc773990ea3","000000000000148|000000000000122","Updated","Success","No Changes Made"
+"2018/06/21 12:33:06","63f10b8637f217005d19dcc773990e5c","000000000000203|000000000000203","Created","Success",""

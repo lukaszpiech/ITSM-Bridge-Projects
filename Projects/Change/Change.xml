@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Project AppVersion="3.7.14" Type="Standard">
-<version>1</version>
+<version>4</version>
 <Notes>This template is used to migrate change management data from BMC Remedy ITSM to Service Now.
 It can be used with most legacy ITSM versions including 764, 8.1 and 9.1 servers.
 It should be run AFTER the migration of all foundation data (see separate template for this).
@@ -1540,8 +1540,8 @@ This is subsequently used to ensure that historical journal entries are displaye
 </FieldMapping>
 <FieldMapping Type="Assignment">
 <TargetField>value</TargetField>
-<Assignment>((('Type: ' + [Work Log Type]) + '
-Description: ') + [Detailed Description])</Assignment>
+<Assignment>(('Type: ' + [Work Log Type]) + '
+Description: ')</Assignment>
 <ErrorAction>SET NULL</ErrorAction>
 </FieldMapping>
 <FieldMapping Type="Simple">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Project AppVersion="3.7.14" Type="Standard">
-<version>1</version>
+<version>3</version>
 <Notes>This template is used to migrate Collection Class CIs from BMC Remedy ITSM to ServiceNow.
 It can be used with most legacy ITSM versions including 764, 8.1 and 9.1 servers.
 It should be run AFTER the migration of all foundation data (see separate template for this).
